@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'cctv/style.css' %}">
+    <meta charset="utf-8">
+    <title>注册新用户</title>
+</head>
+<body>
+<div class="container">
+    <div class="center">
+        <form id="form">
+            {% csrf_token %}
+            <ul>
+                <li>用户名：<input type="text" name="user_name">
+                    {% if user_existed %}用户名已存在
+                    {% elif user_illegal %}请输入长度为1-20字符的用户名
+                    {% endif %}</li>
+                <li>密码：<input type="text" name="user_password">
+                    {% if password_illegal %}请输入长度为1-20字符的密码
+                    {% endif %}</li>
+                <li>确认密码：<input type="text" name="user_password_confirm">
+                    {% if password_different %}密码不一致
+                    {% endif %}</li>
+                <li>
+                    <input type="submit" value="注册" formaction="/cctv/register/check/" formmethod="POST" name="register_check">
+                </li>
+            </ul>
+        </form>
+    </div>
+    <div>
+        <button onclick="window.location.href='/cctv/menu/'">返回</button>
+    </div>
+</div>
+</body>
+</html>
