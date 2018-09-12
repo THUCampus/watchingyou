@@ -211,11 +211,11 @@ def video(request):
         print('post_to_video')
         return
     elif request.method == 'GET':
-        imgs = Image.objects.all().order_by('add_time')
+        imgs = Image.objects.all().order_by('-add_time')
         if not imgs:
             return render(request, 'cctv/video.html', {})
         context = {
-            'img': imgs[0],
+            'img': imgs[0].img,
         }
         return render(request, 'cctv/video.html', context)
 
@@ -229,11 +229,12 @@ def video_refresh(request):
     elif request.method == 'GET':
         response = HttpResponse()
         response['Content-Type'] = "text/plain"
-        imgs = Image.objects.all().order_by('add_time')
+        imgs = Image.objects.all().order_by('-add_time')
         if not imgs:
             return response
         img_str = str(imgs[0].img)
         response.write(img_str)
+
         return response
 
 def logout(request):
