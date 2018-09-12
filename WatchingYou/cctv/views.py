@@ -5,8 +5,6 @@ from django.shortcuts import render, redirect
 
 from django.http import HttpResponse
 
-import json
-
 from .models import User, Image
 
 from django.core.signing import Signer
@@ -62,6 +60,7 @@ def video_refresh(request):
     imgs = Image.objects.all().order_by('add_time')
     imgs[0].delete()
     img_str = str(imgs[1].img)
+    print(img_str)
     response = HttpResponse()
     response['Content-Type'] = "text/plain"
     response.write(img_str)
