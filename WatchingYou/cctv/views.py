@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 
 from django.http import HttpResponse
 
-from .models import User, Image
+from .models import User, Image, Camera
 
 def index(request):
     if request.session.get('login'):
@@ -64,9 +64,11 @@ def menu(request):
         print('post_to_menu')
         return
     elif request.method == 'GET':
+        cameras = Camera.objects.all()
         context = {
             'user': request.session.get('login'),
             'isSuperUser': request.session.get('isSuperUser'),
+            'cameras': cameras,
         }
         return render(request, 'cctv/menu.html', context)
 
@@ -203,25 +205,38 @@ def settings_check(request):
         return redirect('/cctv/settings/')
 
 
-def video(request):
+def video(request, camera):
     if not request.session.get('login'):
         return redirect('/cctv/')
+    camera_path = '/cctv/video/refresh/' + camera + '/'
+    cameras = Camera.objects.filter(camera_id=camera)
+    if not cameras:
+        return redirect('/cctv/menu/')
+    camera = cameras[0]
 
     if request.method == 'POST':
         print('post_to_video')
         return
     elif request.method == 'GET':
-        imgs = Image.objects.all().order_by('-add_time')
+        imgs = camera.image_set.filter(detection_type='None').order_by('-add_time')
         if not imgs:
+            print('no img')
             return render(request, 'cctv/video.html', {})
         context = {
             'img': imgs[0].img,
+            'camera_path': camera_path,
         }
+        print('img')
         return render(request, 'cctv/video.html', context)
 
-def video_refresh(request):
+def video_refresh(request, camera):
     if not request.session.get('login'):
         return redirect('/cctv/')
+
+    cameras = Camera.objects.filter(camera_id='local')
+    if not cameras:
+        return redirect('/cctv/menu/')
+    camera = cameras[0]
 
     if request.method == 'POST':
         print('post_to_video_fresh')
@@ -229,46 +244,13 @@ def video_refresh(request):
     elif request.method == 'GET':
         response = HttpResponse()
         response['Content-Type'] = "text/plain"
-        imgs = Image.objects.all().order_by('-add_time')
+        imgs = camera.image_set.filter(detection_type='None').order_by('-add_time')
         if not imgs:
+            print('no fresh img')
             return response
         img_str = str(imgs[0].img)
+        print(img_str)
         response.write(img_str)
-
-        return response
-
-def detection(request):
-    if not request.session.get('login'):
-        return redirect('/cctv/')
-
-    if request.method == 'POST':
-        print('post_to_video')
-        return
-    elif request.method == 'GET':
-        imgs = Image.objects.all().order_by('-add_time')
-        if not imgs:
-            return render(request, 'cctv/video.html', {})
-        context = {
-            'img': imgs[0].img,
-        }
-        return render(request, 'cctv/video.html', context)
-
-def detection_refresh(request):
-    if not request.session.get('login'):
-        return redirect('/cctv/')
-
-    if request.method == 'POST':
-        print('post_to_video_fresh')
-        return
-    elif request.method == 'GET':
-        response = HttpResponse()
-        response['Content-Type'] = "text/plain"
-        imgs = Image.objects.all().order_by('-add_time')
-        if not imgs:
-            return response
-        img_str = str(imgs[0].img)
-        response.write(img_str)
-
         return response
 
 def logout(request):

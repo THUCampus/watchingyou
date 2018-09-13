@@ -12,9 +12,11 @@
         <form id="form">
             {% csrf_token %}
             <ul>
+                {% for c in cameras %}
                 <li>
-                    <input type="submit" value="进入监控" formaction="/cctv/video/" formmethod="GET" name="video">
+                    <input type="submit" value="进入监控{{ c.camera_id }}" formaction="/cctv/video/{{ c.camera_id }}/" formmethod="GET" name="video{{ c.camera_id }}">
                 </li>
+                {% endfor %}
                 <li>
                     <input type="submit" value="修改密码" formaction="/cctv/settings/" formmethod="GET" name="settings">
                 </li>

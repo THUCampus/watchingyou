@@ -29,20 +29,18 @@ class User(models.Model):
     def is_password_right(self, password):
         return check_password(password, self.password)
 
+class Camera(models.Model):
+    camera_id = models.CharField(max_length=200, unique=True)
+    camera_info = models.CharField(max_length=200, default='')
+
+    def __str__(self):
+        return self.camera_id
 
 class Image(models.Model):
     add_time = models.DateTimeField(auto_now_add=True)
     img = models.ImageField(upload_to='images/')
-
-    def __str__(self):
-        return str(self.add_time)
-
-    def was_load_recently(self):
-        return self.add_time > timezone.now() - datetime.timedelta(seconds=2)
-
-class DetectImage(models.Model):
-    add_time = models.DateTimeField(auto_now_add=True)
-    img = models.ImageField(upload_to='images/')
+    camera = models.ForeignKey(Camera, to_field='camera_id', on_delete=models.CASCADE, default=0)
+    detection_type = models.CharField(max_length=20, default='None')
 
     def __str__(self):
         return str(self.add_time)
@@ -51,9 +49,6 @@ class DetectImage(models.Model):
         return self.add_time > timezone.now() - datetime.timedelta(seconds=2)
 
 @receiver(pre_delete, sender=Image)
-def mymodel_delete(sender, instance, **kwargs):
+def image_delete(sender, instance, **kwargs):
     instance.img.delete(False)
 
-@receiver(pre_delete, sender=DetectImage)
-def mymodel_delete(sender, instance, **kwargs):
-    instance.img.delete(False)
