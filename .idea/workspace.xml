@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6acdcbd-2cc8-45e1-8120-e2fbc6f4a760" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WatchingYou/DetectionInit.py" beforeDir="false" afterPath="$PROJECT_DIR$/WatchingYou/DetectionInit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WatchingYou/cctv/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/WatchingYou/cctv/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WatchingYou/cctv/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/WatchingYou/cctv/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WatchingYou/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/WatchingYou/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WatchingYou/db.sqlite3-journal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WatchingYou/videoinit.py" beforeDir="false" afterPath="$PROJECT_DIR$/WatchingYou/videoinit.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,34 +63,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="56" column="35" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
-              <folding>
-                <element signature="e#24#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WatchingYou/videoinit.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
+      <file leaf-file-name="DetectionInit.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WatchingYou/DetectionInit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
+            <state relative-caret-position="2295">
               <caret line="153" column="94" selection-start-line="153" selection-start-column="94" selection-end-line="153" selection-end-column="94" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -103,12 +75,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WatchingYou/utils/datasets.py">
+      <file leaf-file-name="videoinit.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WatchingYou/videoinit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="375">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,6 +95,11 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>D:/Anaconda3/</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -146,7 +124,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="-15" />
     <option name="width" value="1940" />
     <option name="height" value="1040" />
@@ -156,7 +134,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -169,40 +146,16 @@
               <item name="watchingyou" type="462c0819:PsiDirectoryNode" />
               <item name="WatchingYou" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="watchingyou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="watchingyou" type="462c0819:PsiDirectoryNode" />
-              <item name="WatchingYou" type="462c0819:PsiDirectoryNode" />
-              <item name="cctv" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="watchingyou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="watchingyou" type="462c0819:PsiDirectoryNode" />
-              <item name="WatchingYou" type="462c0819:PsiDirectoryNode" />
-              <item name="cctv" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="watchingyou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="watchingyou" type="462c0819:PsiDirectoryNode" />
-              <item name="WatchingYou" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="watchingyou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="watchingyou" type="462c0819:PsiDirectoryNode" />
-              <item name="WatchingYou" type="462c0819:PsiDirectoryNode" />
-              <item name="WatchingYou" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/WatchingYou/DetectionInit.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -223,7 +176,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Detectioninit">
+  <component name="RunManager" selected="Python.videoinit">
     <configuration name="Detectioninit" type="PythonConfigurationType" factoryName="Python">
       <module name="watchingyou" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -242,9 +195,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="videoinit" type="PythonConfigurationType" factoryName="Python">
       <module name="watchingyou" />
@@ -264,9 +214,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Python.videoinit" />
@@ -296,54 +243,55 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25938338" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.16855524" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.121157326" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32820514" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3286119" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3286119" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.16855524" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="right" id="Remote Host" order="3" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="SciView" order="5" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25938338" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39943343" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.16855524" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3286119" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3286119" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.121157326" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.16855524" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3286119" />
       <window_info anchor="right" id="SciView" order="5" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3286119" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,108 +310,37 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/templates/cctv/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/admin.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/templates/cctv/register.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/WatchingYou/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/tests.py" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/templates/cctv/index.html" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/admin.py" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/templates/cctv/register.html" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/WatchingYou/__init__.py" />
     <entry file="file://$PROJECT_DIR$/WatchingYou/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/WatchingYou/temp.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://D:/Anaconda3/Lib/genericpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/WatchingYou/temp.jpg" />
+    <entry file="file://D:/Anaconda3/Lib/genericpath.py" />
     <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/tmp/1836383456.jpg" />
-    <entry file="file://D:/Anaconda3/Lib/site-packages/django/core/files/storage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5184">
-          <caret line="304" selection-start-line="304" selection-end-line="304" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="32" selection-start-column="32" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/jquery-3.3.1.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/cctv/style.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/WatchingYou/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
-          <caret line="120" column="22" selection-start-line="120" selection-start-column="22" selection-end-line="120" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/templates/cctv/video.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/Anaconda3/Lib/site-packages/django/core/files/storage.py" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/urls.py" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/jquery-3.3.1.min.js" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/cctv/style.css" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/templates/cctv/video.html" />
     <entry file="file://$PROJECT_DIR$/WatchingYou/utils/parse_config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-222" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WatchingYou/utils/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="234" column="13" selection-start-line="234" selection-start-column="8" selection-end-line="234" selection-end-column="34" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/detect.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/WatchingYou/detect.py" />
     <entry file="file://$PROJECT_DIR$/WatchingYou/utils/datasets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -473,57 +350,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/tmp/0352456503.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/5955115595.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/5959089552.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/5957086614.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/5502696803.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/5953083646.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/0001101012.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/1352257914.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/1354233132.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/1356201774.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/1358140345.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/1534463413.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/1526685901.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/1528640303.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/1530572145.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/1532531830.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/tmp/0352456503.jpg" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/5955115595.png" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/5959089552.png" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/5957086614.png" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/5502696803.png" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/5953083646.png" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/0001101012.png" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/1352257914.png" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/1354233132.png" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/1356201774.png" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/1358140345.png" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/1534463413.png" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/1526685901.png" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/1528640303.png" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/1530572145.png" />
+    <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/static/detectresult/1532531830.png" />
     <entry file="file://$PROJECT_DIR$/WatchingYou/cctv/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
+        <state relative-caret-position="808">
           <caret line="56" column="35" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
@@ -531,20 +376,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/videoinit.py">
+    <entry file="file://$PROJECT_DIR$/WatchingYou/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        <state>
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatchingYou/manage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatchingYou/WatchingYou/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatchingYou/WatchingYou/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatchingYou/config/coco.data">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatchingYou/config/yolov3.cfg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatchingYou/data/coco.names">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatchingYou/utils/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatchingYou/.idea/WatchingYou.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatchingYou/WatchingYou/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-612" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatchingYou/DetectionInit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2295">
+          <caret line="153" column="94" selection-start-line="153" selection-start-column="94" selection-end-line="153" selection-end-column="94" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WatchingYou/DetectionInit.py">
+    <entry file="file://$PROJECT_DIR$/WatchingYou/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WatchingYou/videoinit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="153" column="94" selection-start-line="153" selection-start-column="94" selection-end-line="153" selection-end-column="94" />
+        <state relative-caret-position="375">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

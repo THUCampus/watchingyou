@@ -20,6 +20,7 @@ from utils.datasets import *
 
 def detectionInit():
     parser = argparse.ArgumentParser()
+    parser.add_argument("-c", "--camera", required=True, help="id of the camera")
     parser.add_argument('--image_folder', type=str, default='cctv/static/detecttmp', help='path to dataset')
     parser.add_argument('--config_path', type=str, default='config/yolov3.cfg', help='path to model config file')
     parser.add_argument('--weights_path', type=str, default='weights/yolov3.weights', help='path to weights file')
@@ -133,22 +134,28 @@ def detect(dataloader, model, opt, classes):
 
 
 if __name__ == '__main__':
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "WatchingYou.settings")
-    import django  # 导入Django
 
-    django.setup()  # 执行
-    from cctv.models import Image, DetectImage
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "WatchingYou.settings")
+    import django
+
+    django.setup()
+    from cctv.models import Image, Camera
 
     dataloader, model, opt, classes = detectionInit()
 
+    cameras = Camera.objects.filter(camera_id=opt.camera)
+    camera = cameras[0]
+
     while True:
-        imgs = Image.objects.all().order_by('-add_time')
+        imgs = camera.image_set.all().order_by('-add_time')
         imgpath = "cctv/static/" + str(imgs[0].img)
+        print(imgpath)
         img = cv2.imread(imgpath)
         shape = img.shape
         img = cv2.resize(img, dsize=(int(416*shape[1]/shape[0]), 416))
+        timeStamp = datetime.datetime.now().strftime('%M%S%f')
         cv2.imwrite("cctv/static/detecttmp/temp.jpg", img)
         resultpath = detect(dataloader, model, opt, classes)
-        newFrame = DetectImage(img=resultpath)
-        newFrame.save()
-        DetectImage.objects.filter(add_time__lte=timezone.now() - datetime.timedelta(seconds=5)).delete()
+        camera.image_set.create(img="tmp/" + timeStamp + ".jpg", detection_type='Easy')
+        camera.image_set.filter(add_time__lte=timezone.now() - datetime.timedelta(seconds=2),
+                                detection_type='Easy').delete()
