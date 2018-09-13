@@ -40,6 +40,20 @@ class Image(models.Model):
     def was_load_recently(self):
         return self.add_time > timezone.now() - datetime.timedelta(seconds=2)
 
+class DetectImage(models.Model):
+    add_time = models.DateTimeField(auto_now_add=True)
+    img = models.ImageField(upload_to='images/')
+
+    def __str__(self):
+        return str(self.add_time)
+
+    def was_load_recently(self):
+        return self.add_time > timezone.now() - datetime.timedelta(seconds=2)
+
 @receiver(pre_delete, sender=Image)
+def mymodel_delete(sender, instance, **kwargs):
+    instance.img.delete(False)
+
+@receiver(pre_delete, sender=DetectImage)
 def mymodel_delete(sender, instance, **kwargs):
     instance.img.delete(False)

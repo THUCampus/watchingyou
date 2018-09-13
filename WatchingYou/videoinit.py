@@ -9,8 +9,8 @@ if __name__ == '__main__':
 
     django.setup()  # 执行
     from cctv.models import Image
-
-    camLocal = cv2.VideoCapture(0)
+    source = "rtsp://admin:admin@59.66.68.38:554/cam/realmonitor?channel=1&subtype=0"
+    camLocal = cv2.VideoCapture(source)
     while True:
         rtn, frame = camLocal.read()
         timeStamp = datetime.datetime.now().strftime('%M%S%f')

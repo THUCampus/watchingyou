@@ -237,6 +237,40 @@ def video_refresh(request):
 
         return response
 
+def detection(request):
+    if not request.session.get('login'):
+        return redirect('/cctv/')
+
+    if request.method == 'POST':
+        print('post_to_video')
+        return
+    elif request.method == 'GET':
+        imgs = Image.objects.all().order_by('-add_time')
+        if not imgs:
+            return render(request, 'cctv/video.html', {})
+        context = {
+            'img': imgs[0].img,
+        }
+        return render(request, 'cctv/video.html', context)
+
+def detection_refresh(request):
+    if not request.session.get('login'):
+        return redirect('/cctv/')
+
+    if request.method == 'POST':
+        print('post_to_video_fresh')
+        return
+    elif request.method == 'GET':
+        response = HttpResponse()
+        response['Content-Type'] = "text/plain"
+        imgs = Image.objects.all().order_by('-add_time')
+        if not imgs:
+            return response
+        img_str = str(imgs[0].img)
+        response.write(img_str)
+
+        return response
+
 def logout(request):
     if not request.session.get('login'):
         return redirect('/cctv/')
