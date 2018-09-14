@@ -7,19 +7,18 @@
     <link rel="stylesheet" type="text/css" href="{% static 'cctv/style.css' %}">
     <script src="{% static 'jquery-3.3.1.min.js' %}"></script>
     <script type="text/javascript">
-        delta = 1000
+        delta = 30
         function refresh() {
             console.log("hhhhh");
             setTimeout('submit()', delta);
         }
         function submit() {
-            console.log("2333");
             $.ajax({
-                url:"{% url 'cctv:video_refresh' %}",
+                url:'{{ camera_path }}',
                 type:'GET',
                 tradition:true,
                 data:{},
-                success: function (result) {    //如果程序执行成功就会执行这里的函数
+                success: function (result) {
                     document.getElementById("img").src = "/static/" + result;
                     setTimeout('submit()', delta);
                 }
@@ -28,9 +27,12 @@
     </script>
 </head>
 <body id="body" onload="refresh()">
-<div>
+<div class="container">
+    <div id="video">
+        <img id="img" src="{% static img %}">
+    </div>
     <div>
-        <img id="img" src="{% static img.img %}">
+        <button onclick="window.location.href='/cctv/menu/'">返回</button>
     </div>
 </div>
 </body>
