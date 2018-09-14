@@ -147,7 +147,7 @@ if __name__ == '__main__':
     camera = cameras[0]
 
     while True:
-        imgs = camera.image_set.all().order_by('-add_time')
+        imgs = camera.image_set.all().filter(detection_type='None').order_by('-add_time')
         imgpath = "cctv/static/" + str(imgs[0].img)
         print(imgpath)
         img = cv2.imread(imgpath)
