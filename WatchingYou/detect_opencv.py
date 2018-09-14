@@ -153,7 +153,6 @@ if __name__ == '__main__':
         tmppath = "cctv/static/detecttmp/temp.jpg"
         cv2.imwrite(tmppath, img)
         img = cv2.imread(tmppath)
-<<<<<<< HEAD
         try:
             blob = cv2.dnn.blobFromImage(img, 1 / 255, (inpWidth, inpHeight), [0, 0, 0], 1, crop=False)
             net.setInput(blob)
@@ -170,17 +169,3 @@ if __name__ == '__main__':
         except:
             print('opencv detect failed')
             continue
-=======
-        blob = cv2.dnn.blobFromImage(img, 1/255, (inpWidth, inpHeight), [0,0,0], 1, crop=False)
-        net.setInput(blob)
-        outs = net.forward(getOutputsNames(net))
-        indices, boxes, classIds, confidences = postprocess(img, outs)
-        savepath = drawPred(tmppath, indices, boxes, classIds, confidences)
-        camera.image_set.create(img=savepath, detection_type='Easy')
-        camera.image_set.filter(add_time__lte=timezone.now() - datetime.timedelta(seconds=2),
-                                detection_type='Easy').delete()
-        current_time = time.time()
-        inference_time = datetime.timedelta(seconds=current_time - prev_time)
-        prev_time = current_time
-        print('\t Inference Time: %s' % (inference_time))
->>>>>>> master

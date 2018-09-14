@@ -15,7 +15,12 @@
                 {% for c in cameras %}
                 {% for d in detect_types %}
                 <li>
-                    <input type="submit" value="进入监控(相机：{{ c.camera_id }}，检测类型：{{ d.detection_type }})" formaction="/cctv/video/{{ c.camera_id }}/{{ d.detection_type }}/" formmethod="GET" name="video_{{ c.camera_id }}_{{ d.detection_type }}">
+                    <input type="submit" value="进入监控(相机：{{ c.camera_id }}，检测类型：{{ d.detection_type }})第一版"
+                           formaction="/cctv/video/camera-{{ c.camera_id }}/detect-{{ d.detection_type }}/" formmethod="GET"
+                           name="video_{{ c.camera_id }}_{{ d.detection_type }}">
+                    <input type="submit" value="进入监控(相机：{{ c.camera_id }}，检测类型：{{ d.detection_type }})第二版"
+                           formaction="/cctv/video/v2/camera-{{ c.camera_id }}/detect-{{ d.detection_type }}/" formmethod="GET"
+                           name="video_v2_{{ c.camera_id }}_{{ d.detection_type }}">
                 </li>
                 {% endfor %}
                 {% endfor %}

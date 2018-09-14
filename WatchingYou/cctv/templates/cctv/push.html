@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>实时推送</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var websocket;
+            var name = '{{ username }}';
+
+            if('WebSocket' in window) {
+                websocket = new WebSocket("ws://localhost:8000/cctv/websocketLink/"+name);
+            } else if('MozWebSocket' in window) {
+                websocket = new MozWebSocket("ws://localhost:8000/cctv/websocketLink/"+name);
+            } else {
+                websocket = new SockJS("ws://localhost:8000/cctv/websocketLink/"+name);
+            }
+
+            websocket.onopen = function(event) {
+                alert("您已连接")
+            };
+            $('#send_message').click(function () {
+                if(!websocket){
+                    alert("请连接服务器");
+                } else {
+                    websocket.send(JSON.stringify({'title': '通知', 'data': $('#message').val(), 'url': null}));
+                }
+            });
+
+            websocket.onmessage = function(event) {
+                //var data = JSON.parse(event.data);
+                //alert(data.data)
+                alert(event.data)
+            };
+
+            websocket.onerror = function(event) {
+                console.log("websocket.onerror");
+            };
+            websocket.onclose = function(event) {
+                alert("已断开服务器")
+            };
+            $('#close_websocket').click(function () {
+                if(websocket){
+                    websocket.close();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<br>
+<input type="text" id="message" value="Hello, World!" />
+<button type="button" id="send_message">发送消息</button>
+<button type="button" id="close_websocket">关闭websocket</button>
+</body>
+</html>

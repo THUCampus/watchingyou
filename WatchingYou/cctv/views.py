@@ -9,6 +9,10 @@ from .models import User, Image, Camera
 
 import cv2, time
 
+import threading
+from dwebsocket.decorators import accept_websocket
+import json
+
 def index(request):
     if request.session.get('login'):
         return redirect('/cctv/menu/')
@@ -212,12 +216,8 @@ def settings_check(request):
 def video(request, camera, detect):
     if not request.session.get('login'):
         return redirect('/cctv/')
-<<<<<<< HEAD
-    camera_path = '/cctv/video/refresh/' + camera + '/' + detect +'/'
-=======
-    #camera_path = '/cctv/video/refresh/' + camera + '/'
-    camera_path = '/cctv/video/stream/' + camera + '/'
->>>>>>> master
+
+    camera_path = '/cctv/video/refresh/camera-' + camera + '/detect-' + detect +'/'
     cameras = Camera.objects.filter(camera_id=camera)
     if not cameras:
         return redirect('/cctv/menu/')
@@ -227,11 +227,7 @@ def video(request, camera, detect):
         print('post_to_video')
         return
     elif request.method == 'GET':
-<<<<<<< HEAD
-        imgs = camera.image_set.filter(detection_type=detect).order_by('-add_time')
-=======
-        imgs = camera_select.image_set.filter(detection_type='Easy').order_by('-add_time')
->>>>>>> master
+        imgs = camera_select.image_set.filter(detection_type=detect).order_by('-add_time')
         if not imgs:
             print('no img')
             return render(request, 'cctv/video.html', {})
@@ -240,16 +236,12 @@ def video(request, camera, detect):
             'camera_path': camera_path,
         }
         print('img')
-        return render(request, 'cctv/video.html', context)
+        return render(request, 'cctv/videoold.html', context)
 
 def video_refresh(request, camera, detect):
     if not request.session.get('login'):
         return redirect('/cctv/')
-<<<<<<< HEAD
 
-=======
-    camera_id = request.path.split('/')[-2]
->>>>>>> master
     cameras = Camera.objects.filter(camera_id=camera)
     if not cameras:
         return redirect('/cctv/menu/')
@@ -261,11 +253,7 @@ def video_refresh(request, camera, detect):
     elif request.method == 'GET':
         response = HttpResponse()
         response['Content-Type'] = "text/plain"
-<<<<<<< HEAD
-        imgs = camera.image_set.filter(detection_type=detect).order_by('-add_time')
-=======
-        imgs = camera_select.image_set.filter(detection_type='Easy').order_by('-add_time')
->>>>>>> master
+        imgs = camera_select.image_set.filter(detection_type=detect).order_by('-add_time')
         if not imgs:
             print('no fresh img')
             return response
@@ -274,21 +262,46 @@ def video_refresh(request, camera, detect):
         response.write(img_str)
         return response
 
-def getFrame(camera):
-    imgs = camera.image_set.filter(detection_type='Easy').order_by('-add_time')
+def video_v2(request, camera, detect):
+    if not request.session.get('login'):
+        return redirect('/cctv/')
+
+    camera_path = '/cctv/video/stream/camera-' + camera + '/detect-' + detect + '/'
+    cameras = Camera.objects.filter(camera_id=camera)
+    if not cameras:
+        return redirect('/cctv/menu/')
+    camera_select = cameras[0]
+
+    if request.method == 'POST':
+        print('post_to_video')
+        return
+    elif request.method == 'GET':
+        imgs = camera_select.image_set.filter(detection_type=detect).order_by('-add_time')
+        if not imgs:
+            print('no img')
+            return render(request, 'cctv/video.html', {})
+        context = {
+            'img': str(imgs[0].img),
+            'camera_path': camera_path,
+        }
+        print('img')
+        return render(request, 'cctv/video.html', context)
+
+def getFrame(camera, detect):
+    imgs = camera.image_set.filter(detection_type=detect).order_by('-add_time')
     frame = cv2.imread("cctv/static/" + str(imgs[0].img))
-    ret,frame = cv2.imencode('.jpg',frame)
+    ret, frame = cv2.imencode('.jpg', frame)
     frame = frame.tobytes()
     return frame
 
-def gen(camera):
+def gen(camera, detect):
     while True:
         time.sleep(0.05)
-        frame = getFrame(camera)
+        frame = getFrame(camera, detect)
         yield(b'--frame\r\n'
               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
-def video_stream(request, camera):
+def video_stream(request, camera, detect):
     if not request.session.get('login'):
         return redirect('/cctv/')
     cameras = Camera.objects.filter(camera_id=camera)
@@ -300,7 +313,7 @@ def video_stream(request, camera):
         print('post_to_video_fresh')
         return
     elif request.method == 'GET':
-        return StreamingHttpResponse(gen(camera_select),content_type="multipart/x-mixed-replace;boundary=frame")
+        return StreamingHttpResponse(gen(camera_select, detect), content_type="multipart/x-mixed-replace;boundary=frame")
 
 def logout(request):
     if not request.session.get('login'):
@@ -314,3 +327,60 @@ def logout(request):
         del request.session['login']
         request.session['isSuperUser'] = False
         return redirect('/cctv/')
+
+clients = {}
+count = 0
+
+@accept_websocket
+def websocketLink(request, username):
+    global count
+    print("websocketLink load")
+
+    if request.is_websocket:
+        lock = threading.RLock()
+        try:
+            lock.acquire()
+            s = {}
+            if clients.get(username) != None:
+                s[str(request.websocket)] = request.websocket
+                clients[username].update(s)
+            else:
+                count += 1
+                s[str(request.websocket)] = request.websocket
+                clients[username] = s
+
+            for message in request.websocket:
+                if not message:
+                    print("websocketLink listening")
+                    break
+                else:
+                    print("websocketLink listen")
+                    newmessage = str(u'{"title":"eng","data":"Hello, World!","url":null}')
+                    request.websocket.send(newmessage)
+        finally:
+            clients.get(username).pop(str(request.websocket))
+            lock.release()
+
+def websocketMsg(client, msg):
+    print("websocketMsg")
+    for cli in client:
+        b1 = json.dumps(msg).encode('utf-8')
+        client[cli].send(b1)
+
+def send(username, title, data, url):
+    print("send")
+    try:
+        if clients[username]:
+            websocketMsg(clients[username], {'title':title, 'data':'wojiubu', 'url': url})
+            flg = 1
+        flg = -1
+    except BaseException:
+        pass
+    finally:
+        pass
+
+def testview(request):
+    context = {
+        'username': '12355'
+    }
+    return render(request, 'cctv/push.html', context)
