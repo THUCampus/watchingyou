@@ -54,7 +54,7 @@ class Alert(models.Model):
     message = models.TextField()
 
     def __str__(self):
-        return str(self.message)
+        return str(self.add_time) + ' ' + str(self.message)
 
 @receiver(pre_delete, sender=Image)
 def image_delete(sender, instance, **kwargs):
