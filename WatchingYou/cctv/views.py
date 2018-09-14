@@ -233,7 +233,7 @@ def video_refresh(request, camera):
     if not request.session.get('login'):
         return redirect('/cctv/')
 
-    cameras = Camera.objects.filter(camera_id='local')
+    cameras = Camera.objects.filter(camera_id=camera)
     if not cameras:
         return redirect('/cctv/menu/')
     camera = cameras[0]
