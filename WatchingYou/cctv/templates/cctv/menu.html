@@ -13,9 +13,11 @@
             {% csrf_token %}
             <ul>
                 {% for c in cameras %}
+                {% for d in detect_types %}
                 <li>
-                    <input type="submit" value="进入监控{{ c.camera_id }}" formaction="/cctv/video/{{ c.camera_id }}/" formmethod="GET" name="video{{ c.camera_id }}">
+                    <input type="submit" value="进入监控(相机：{{ c.camera_id }}，检测类型：{{ d.detection_type }})" formaction="/cctv/video/{{ c.camera_id }}/{{ d.detection_type }}/" formmethod="GET" name="video_{{ c.camera_id }}_{{ d.detection_type }}">
                 </li>
+                {% endfor %}
                 {% endfor %}
                 <li>
                     <input type="submit" value="修改密码" formaction="/cctv/settings/" formmethod="GET" name="settings">

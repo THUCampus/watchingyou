@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57f3847e-c8a6-4915-8e5b-5ed173d646ef" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/config/yolov3-tiny.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detect_opencv.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mjpeg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DetectionInit.py" beforeDir="false" afterPath="$PROJECT_DIR$/DetectionInit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cctv/static/detectresult/2035488326.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cctv/templates/cctv/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/cctv/templates/cctv/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cctv/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cctv/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cctv/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cctv/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
@@ -20,8 +29,8 @@
           <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/cctv/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="405">
-                  <caret line="33" column="62" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="62" />
+                <state relative-caret-position="220">
+                  <caret line="42" column="18" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="18" />
                   <folding>
                     <element signature="e#24#63#0" expanded="true" />
                   </folding>
@@ -41,11 +50,20 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/cctv/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="183">
-                  <caret line="246" column="83" selection-start-line="246" selection-start-column="83" selection-end-line="246" selection-end-column="83" />
+                <state relative-caret-position="990">
+                  <caret line="66" column="38" lean-forward="true" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
                   <folding>
                     <element signature="e#24#63#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="detect_opencv.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/detect_opencv.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="330">
+                  <caret line="170" column="20" selection-start-line="170" selection-start-column="20" selection-end-line="170" selection-end-column="20" />
                 </state>
               </provider>
             </entry>
@@ -54,7 +72,7 @@
             <entry file="file://$PROJECT_DIR$/cctv/urls.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="210">
-                  <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+                  <caret line="16" column="108" selection-start-line="16" selection-start-column="108" selection-end-line="16" selection-end-column="108" />
                 </state>
               </provider>
             </entry>
@@ -62,8 +80,8 @@
           <file leaf-file-name="menu.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/cctv/templates/cctv/menu.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+                <state relative-caret-position="180">
+                  <caret line="17" column="98" selection-start-line="17" selection-start-column="84" selection-end-line="17" selection-end-column="98" />
                 </state>
               </provider>
             </entry>
@@ -72,11 +90,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="DetectionInit.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="DetectionInit.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/DetectionInit.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="115">
-                  <caret line="151" column="22" selection-start-line="151" selection-start-column="22" selection-end-line="151" selection-end-column="22" />
+                <state relative-caret-position="226">
+                  <caret line="162" column="34" selection-start-line="162" selection-start-column="34" selection-end-line="162" selection-end-column="34" />
                   <folding>
                     <element signature="e#0#10#0" expanded="true" />
                   </folding>
@@ -84,11 +102,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="videoinit.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="videoinit.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/videoinit.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="214">
-                  <caret line="28" column="67" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
+                <state relative-caret-position="199">
+                  <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
                   <folding>
                     <element signature="e#0#10#0" expanded="true" />
                   </folding>
@@ -145,10 +163,11 @@
         <option value="$PROJECT_DIR$/cctv/admin.py" />
         <option value="$PROJECT_DIR$/cctv/models.py" />
         <option value="$PROJECT_DIR$/videoinit.py" />
-        <option value="$PROJECT_DIR$/cctv/urls.py" />
-        <option value="$PROJECT_DIR$/cctv/templates/cctv/menu.html" />
         <option value="$PROJECT_DIR$/cctv/templates/cctv/video.html" />
         <option value="$PROJECT_DIR$/DetectionInit.py" />
+        <option value="$PROJECT_DIR$/detect_opencv.py" />
+        <option value="$PROJECT_DIR$/cctv/urls.py" />
+        <option value="$PROJECT_DIR$/cctv/templates/cctv/menu.html" />
         <option value="$PROJECT_DIR$/cctv/views.py" />
       </list>
     </option>
@@ -171,6 +190,30 @@
             <path>
               <item name="WatchingYou" type="b2602c69:ProjectViewProjectNode" />
               <item name="WatchingYou" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WatchingYou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WatchingYou" type="462c0819:PsiDirectoryNode" />
+              <item name="cctv" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WatchingYou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WatchingYou" type="462c0819:PsiDirectoryNode" />
+              <item name="cctv" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WatchingYou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WatchingYou" type="462c0819:PsiDirectoryNode" />
+              <item name="cctv" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WatchingYou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WatchingYou" type="462c0819:PsiDirectoryNode" />
+              <item name="cctv" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="cctv" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -276,11 +319,11 @@
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.92" visible="true" weight="0.27124774" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005834" side_tool="true" weight="0.32923076" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49909583" visible="true" weight="0.14974359" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49909583" weight="0.14974359" />
       <window_info anchor="bottom" id="Python Console" order="8" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.18256411" />
       <window_info id="Structure" order="1" sideWeight="0.08" side_tool="true" weight="0.31971994" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.50090414" side_tool="true" visible="true" weight="0.14974359" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.50090414" side_tool="true" visible="true" weight="0.21538462" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -293,22 +336,22 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.92" visible="true" weight="0.23749247" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18256411" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.92" visible="true" weight="0.27124774" />
       <window_info id="Structure" order="1" sideWeight="0.08" side_tool="true" weight="0.31971994" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49941656" weight="0.14974359" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18256411" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005834" side_tool="true" weight="0.32923076" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3296593" />
       <window_info anchor="bottom" id="Python Console" order="8" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.50090414" side_tool="true" visible="true" weight="0.21538462" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005834" side_tool="true" weight="0.32923076" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49909583" weight="0.14974359" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -324,9 +367,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WatchingYou/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/cctv/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3645">
@@ -514,44 +554,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cctv/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="33" column="62" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="62" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cctv/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cctv/templates/cctv/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cctv/templates/cctv/video.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/videoinit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="28" column="67" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -560,18 +566,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DetectionInit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="151" column="22" selection-start-line="151" selection-start-column="22" selection-end-line="151" selection-end-column="22" />
+        <state relative-caret-position="226">
+          <caret line="162" column="34" selection-start-line="162" selection-start-column="34" selection-end-line="162" selection-end-column="34" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/detect_opencv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="170" column="20" selection-start-line="170" selection-start-column="20" selection-end-line="170" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/videoinit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cctv/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="108" selection-start-line="16" selection-start-column="108" selection-end-line="16" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cctv/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="42" column="18" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="18" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cctv/templates/cctv/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="17" column="98" selection-start-line="17" selection-start-column="84" selection-end-line="17" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cctv/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="246" column="83" selection-start-line="246" selection-start-column="83" selection-end-line="246" selection-end-column="83" />
+        <state relative-caret-position="990">
+          <caret line="66" column="38" lean-forward="true" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
           </folding>

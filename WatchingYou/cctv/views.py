@@ -65,10 +65,12 @@ def menu(request):
         return
     elif request.method == 'GET':
         cameras = Camera.objects.all()
+        detect_types = Image.objects.values('detection_type').distinct().order_by('-detection_type')
         context = {
             'user': request.session.get('login'),
             'isSuperUser': request.session.get('isSuperUser'),
             'cameras': cameras,
+            'detect_types': detect_types,
         }
         return render(request, 'cctv/menu.html', context)
 
@@ -205,10 +207,10 @@ def settings_check(request):
         return redirect('/cctv/settings/')
 
 
-def video(request, camera):
+def video(request, camera, detect):
     if not request.session.get('login'):
         return redirect('/cctv/')
-    camera_path = '/cctv/video/refresh/' + camera + '/'
+    camera_path = '/cctv/video/refresh/' + camera + '/' + detect +'/'
     cameras = Camera.objects.filter(camera_id=camera)
     if not cameras:
         return redirect('/cctv/menu/')
@@ -218,18 +220,18 @@ def video(request, camera):
         print('post_to_video')
         return
     elif request.method == 'GET':
-        imgs = camera.image_set.filter(detection_type='Easy').order_by('-add_time')
+        imgs = camera.image_set.filter(detection_type=detect).order_by('-add_time')
         if not imgs:
             print('no img')
             return render(request, 'cctv/video.html', {})
         context = {
-            'img': imgs[0].img,
+            'img': str(imgs[0].img),
             'camera_path': camera_path,
         }
         print('img')
         return render(request, 'cctv/video.html', context)
 
-def video_refresh(request, camera):
+def video_refresh(request, camera, detect):
     if not request.session.get('login'):
         return redirect('/cctv/')
 
@@ -244,7 +246,7 @@ def video_refresh(request, camera):
     elif request.method == 'GET':
         response = HttpResponse()
         response['Content-Type'] = "text/plain"
-        imgs = camera.image_set.filter(detection_type='Easy').order_by('-add_time')
+        imgs = camera.image_set.filter(detection_type=detect).order_by('-add_time')
         if not imgs:
             print('no fresh img')
             return response
