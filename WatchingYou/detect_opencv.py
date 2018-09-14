@@ -8,6 +8,7 @@ import PIL.Image
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from matplotlib.ticker import NullLocator
+from apscheduler.schedulers.background import BackgroundScheduler
 
 def getOutputsNames(net):
     # Get the names of all the layers in the network
@@ -15,16 +16,33 @@ def getOutputsNames(net):
     # Get the names of the output layers, i.e. the layers with unconnected outputs
     return [layersNames[i[0] - 1] for i in net.getUnconnectedOutLayers()]
 
+def addAlert(indices, classIDs, alerts, alertTime):
+    classList = []
+    for indice in indices:
+        i = indice[0]
+        classList.append(classIDs[i])
+    if len(classList) == 0:
+        return
+    classList = list(set(classList))
+    alertTime.append(datetime.datetime.now())
+    alert = ""
+    for id in classList:
+        alert += (classes[id] + ' ')
+    alert += 'detected'
+    alerts.append(alert)
+
+def writeAlert(alerts, alertTime, camera):
+    print("writeAlert")
+    if len(alerts) == 0:
+        return
+    camera.alert_set.create(add_time=alertTime[-1],message=alerts[-1])
+    alerts.clear()
+    alertTime.clear()
 
 def postprocess(frame, outs):
     frameHeight = frame.shape[0]
     frameWidth = frame.shape[1]
 
-    classIds = []
-    confidences = []
-    boxes = []
-    # Scan through all the bounding boxes output from the network and keep only the
-    # ones with high confidence scores. Assign the box's class label as the class with the highest score.
     classIds = []
     confidences = []
     boxes = []
@@ -120,7 +138,7 @@ if __name__ == '__main__':
     import django
 
     django.setup()
-    from cctv.models import Image, Camera
+    from cctv.models import Camera
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-c", "--camera", required=True, help="id of the camera")
@@ -143,6 +161,11 @@ if __name__ == '__main__':
     net = cv2.dnn.readNetFromDarknet(modelConfiguration, modelWeights)
     net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
     net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
+    alertTime = []
+    alerts = []
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(func=writeAlert, args=(alerts, alertTime, camera), trigger='interval', seconds=1)
+    scheduler.start()
     while True:
         prev_time = time.time()
         imgs = camera.image_set.filter(detection_type='None').order_by('-add_time')
@@ -157,6 +180,7 @@ if __name__ == '__main__':
         net.setInput(blob)
         outs = net.forward(getOutputsNames(net))
         indices, boxes, classIds, confidences = postprocess(img, outs)
+        addAlert(indices,classIds,alerts,alertTime)
         savepath = drawPred(tmppath, indices, boxes, classIds, confidences)
         camera.image_set.create(img=savepath, detection_type='Easy')
         camera.image_set.filter(add_time__lte=timezone.now() - datetime.timedelta(seconds=2),
