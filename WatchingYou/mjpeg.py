@@ -2,13 +2,13 @@ import string,cgi,time
 from os import curdir, sep
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from socketserver import ThreadingMixIn
-import cv2.cv as cv
+import cv2 as cv
 import re
 import sys
 import socket
 
-capture = cv.CaptureFromCAM(0)
-img1 = cv.QueryFrame(capture)
+capture = cv.VideoCapture(0)
+rtn, img1 = capture.read()
 
 if img1 == None :
     print("No WebCam Found!")
@@ -28,14 +28,6 @@ class MyHandler(BaseHTTPRequestHandler):
         try:
             self.path=re.sub('[^.a-zA-Z0-9]', "",str(self.path))
             if self.path=="" or self.path==None or self.path[:1]==".":
-                return
-            if self.path.endswith(".html"):
-                f = open(curdir + sep + self.path)
-                self.send_response(200)
-                self.send_header('Content-type',	'text/html')
-                self.end_headers()
-                self.wfile.write(f.read())
-                f.close()
                 return
             if self.path.endswith(".mjpeg"):
                 self.send_response(200)
@@ -99,7 +91,7 @@ def main():
             server.serve_forever()
         except KeyboardInterrupt:
             print('^C received, shutting down server')
-            server.socket.close()
+            server.server_close()
 
 if __name__ == '__main__':
     main()

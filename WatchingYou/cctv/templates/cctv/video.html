@@ -5,31 +5,11 @@
     <title>实时画面</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'cctv/style.css' %}">
-    <script src="{% static 'jquery-3.3.1.min.js' %}"></script>
-    <script type="text/javascript">
-        delta = 30
-        function refresh() {
-            console.log("hhhhh");
-            setTimeout('submit()', delta);
-        }
-        function submit() {
-            $.ajax({
-                url:'{{ camera_path }}',
-                type:'GET',
-                tradition:true,
-                data:{},
-                success: function (result) {
-                    document.getElementById("img").src = "/static/" + result;
-                    setTimeout('submit()', delta);
-                }
-            });
-        }
-    </script>
 </head>
-<body id="body" onload="refresh()">
+<body>
 <div class="container">
     <div id="video">
-        <img id="img" src="{% static img %}">
+        <img id="img" src="{{ camera_path }}">
     </div>
     <div>
         <button onclick="window.location.href='/cctv/menu/'">返回</button>
