@@ -15,4 +15,5 @@ urlpatterns = [
     url(r'^settings/check/$', views.settings_check, name='settings_check'),
     url(r'^video/(?P<camera>[^/]+)/$', views.video, name='video'),
     url(r'^video/refresh/(?P<camera>[^/]+)/$', views.video_refresh, name="video_refresh"),
+    url(r'^video/stream/(?P<camera>[^/]+)/$', views.video_stream, name="video_stream")
 ]
