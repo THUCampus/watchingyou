@@ -218,7 +218,7 @@ def video(request, camera):
         print('post_to_video')
         return
     elif request.method == 'GET':
-        imgs = camera.image_set.filter(detection_type='None').order_by('-add_time')
+        imgs = camera.image_set.filter(detection_type='Easy').order_by('-add_time')
         if not imgs:
             print('no img')
             return render(request, 'cctv/video.html', {})
@@ -244,7 +244,7 @@ def video_refresh(request, camera):
     elif request.method == 'GET':
         response = HttpResponse()
         response['Content-Type'] = "text/plain"
-        imgs = camera.image_set.filter(detection_type='None').order_by('-add_time')
+        imgs = camera.image_set.filter(detection_type='Easy').order_by('-add_time')
         if not imgs:
             print('no fresh img')
             return response

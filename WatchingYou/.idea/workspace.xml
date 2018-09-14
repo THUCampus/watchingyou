@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57f3847e-c8a6-4915-8e5b-5ed173d646ef" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cctv/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cctv/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
@@ -40,8 +41,8 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/cctv/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="235" column="53" selection-start-line="235" selection-start-column="53" selection-end-line="235" selection-end-column="53" />
+                <state relative-caret-position="183">
+                  <caret line="246" column="83" selection-start-line="246" selection-start-column="83" selection-end-line="246" selection-end-column="83" />
                   <folding>
                     <element signature="e#24#63#0" expanded="true" />
                   </folding>
@@ -71,10 +72,10 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="DetectionInit.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="DetectionInit.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/DetectionInit.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2010">
+                <state relative-caret-position="115">
                   <caret line="151" column="22" selection-start-line="151" selection-start-column="22" selection-end-line="151" selection-end-column="22" />
                   <folding>
                     <element signature="e#0#10#0" expanded="true" />
@@ -83,7 +84,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="videoinit.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="videoinit.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/videoinit.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="214">
@@ -169,35 +170,6 @@
           <expand>
             <path>
               <item name="WatchingYou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WatchingYou" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WatchingYou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WatchingYou" type="462c0819:PsiDirectoryNode" />
-              <item name="cctv" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WatchingYou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WatchingYou" type="462c0819:PsiDirectoryNode" />
-              <item name="cctv" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WatchingYou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WatchingYou" type="462c0819:PsiDirectoryNode" />
-              <item name="cctv" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WatchingYou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WatchingYou" type="462c0819:PsiDirectoryNode" />
-              <item name="cctv" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="cctv" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WatchingYou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WatchingYou" type="462c0819:PsiDirectoryNode" />
               <item name="WatchingYou" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -304,11 +276,11 @@
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.92" visible="true" weight="0.27124774" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005834" side_tool="true" weight="0.32923076" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49941656" weight="0.14974359" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49909583" visible="true" weight="0.14974359" />
       <window_info anchor="bottom" id="Python Console" order="8" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.18256411" />
       <window_info id="Structure" order="1" sideWeight="0.08" side_tool="true" weight="0.31971994" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" side_tool="true" visible="true" weight="0.21538462" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.50090414" side_tool="true" visible="true" weight="0.14974359" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -352,13 +324,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cctv/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="51" lean-forward="true" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WatchingYou/wsgi.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -580,16 +545,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DetectionInit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2010">
-          <caret line="151" column="22" selection-start-line="151" selection-start-column="22" selection-end-line="151" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/videoinit.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
@@ -600,10 +555,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cctv/static/detectresult/2035488326.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DetectionInit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="151" column="22" selection-start-line="151" selection-start-column="22" selection-end-line="151" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cctv/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="235" column="53" selection-start-line="235" selection-start-column="53" selection-end-line="235" selection-end-column="53" />
+        <state relative-caret-position="183">
+          <caret line="246" column="83" selection-start-line="246" selection-start-column="83" selection-end-line="246" selection-end-column="83" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
           </folding>
