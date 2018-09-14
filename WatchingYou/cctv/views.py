@@ -3,9 +3,11 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect
 
-from django.http import HttpResponse
+from django.http import HttpResponse, StreamingHttpResponse
 
 from .models import User, Image, Camera
+
+import cv2, time
 
 def index(request):
     if request.session.get('login'):
@@ -210,17 +212,26 @@ def settings_check(request):
 def video(request, camera, detect):
     if not request.session.get('login'):
         return redirect('/cctv/')
+<<<<<<< HEAD
     camera_path = '/cctv/video/refresh/' + camera + '/' + detect +'/'
+=======
+    #camera_path = '/cctv/video/refresh/' + camera + '/'
+    camera_path = '/cctv/video/stream/' + camera + '/'
+>>>>>>> master
     cameras = Camera.objects.filter(camera_id=camera)
     if not cameras:
         return redirect('/cctv/menu/')
-    camera = cameras[0]
+    camera_select = cameras[0]
 
     if request.method == 'POST':
         print('post_to_video')
         return
     elif request.method == 'GET':
+<<<<<<< HEAD
         imgs = camera.image_set.filter(detection_type=detect).order_by('-add_time')
+=======
+        imgs = camera_select.image_set.filter(detection_type='Easy').order_by('-add_time')
+>>>>>>> master
         if not imgs:
             print('no img')
             return render(request, 'cctv/video.html', {})
@@ -234,11 +245,15 @@ def video(request, camera, detect):
 def video_refresh(request, camera, detect):
     if not request.session.get('login'):
         return redirect('/cctv/')
+<<<<<<< HEAD
 
+=======
+    camera_id = request.path.split('/')[-2]
+>>>>>>> master
     cameras = Camera.objects.filter(camera_id=camera)
     if not cameras:
         return redirect('/cctv/menu/')
-    camera = cameras[0]
+    camera_select = cameras[0]
 
     if request.method == 'POST':
         print('post_to_video_fresh')
@@ -246,7 +261,11 @@ def video_refresh(request, camera, detect):
     elif request.method == 'GET':
         response = HttpResponse()
         response['Content-Type'] = "text/plain"
+<<<<<<< HEAD
         imgs = camera.image_set.filter(detection_type=detect).order_by('-add_time')
+=======
+        imgs = camera_select.image_set.filter(detection_type='Easy').order_by('-add_time')
+>>>>>>> master
         if not imgs:
             print('no fresh img')
             return response
@@ -254,6 +273,34 @@ def video_refresh(request, camera, detect):
         print(img_str)
         response.write(img_str)
         return response
+
+def getFrame(camera):
+    imgs = camera.image_set.filter(detection_type='Easy').order_by('-add_time')
+    frame = cv2.imread("cctv/static/" + str(imgs[0].img))
+    ret,frame = cv2.imencode('.jpg',frame)
+    frame = frame.tobytes()
+    return frame
+
+def gen(camera):
+    while True:
+        time.sleep(0.05)
+        frame = getFrame(camera)
+        yield(b'--frame\r\n'
+              b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+
+def video_stream(request, camera):
+    if not request.session.get('login'):
+        return redirect('/cctv/')
+    cameras = Camera.objects.filter(camera_id=camera)
+    if not cameras:
+        return redirect('/cctv/menu/')
+    camera_select = cameras[0]
+
+    if request.method == 'POST':
+        print('post_to_video_fresh')
+        return
+    elif request.method == 'GET':
+        return StreamingHttpResponse(gen(camera_select),content_type="multipart/x-mixed-replace;boundary=frame")
 
 def logout(request):
     if not request.session.get('login'):

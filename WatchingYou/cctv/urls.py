@@ -13,6 +13,12 @@ urlpatterns = [
     url(r'^register/check/$', views.register_check, name='register_check'),
     url(r'^settings/$', views.settings, name='settings'),
     url(r'^settings/check/$', views.settings_check, name='settings_check'),
+<<<<<<< HEAD
     url(r'^video/(?P<camera>[^/]+)/(?P<detect>[^/]+)/$', views.video, name='video'),
     url(r'^video/refresh/(?P<camera>[^/]+)/(?P<detect>[^/]+)/$', views.video_refresh, name="video_refresh"),
+=======
+    url(r'^video/(?P<camera>[^/]+)/$', views.video, name='video'),
+    url(r'^video/refresh/(?P<camera>[^/]+)/$', views.video_refresh, name="video_refresh"),
+    url(r'^video/stream/(?P<camera>[^/]+)/$', views.video_stream, name="video_stream")
+>>>>>>> master
 ]
